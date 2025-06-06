@@ -33,8 +33,6 @@ void RPM_sensors_begin(uint8_t S1_PIN, uint8_t S2_PIN, uint8_t time_res)
 void RPM_sensors_read(RPM_Data_t *s1, RPM_Data_t *s2)
 {
     disable_irqs();
-    uint8_t s1_pulses = _s1_data.pulses;
-    uint8_t s2_pulses = _s2_data.pulses;
     if (_s1_data.size)
     {
         s1->period = _s1_data.get_mean_delta_ms();
